@@ -34,28 +34,9 @@ class indexTest extends PHPUnit_Framework_TestCase {
         }
     }
     
-    public function testDocumentHasRootNodes(){
-        $this->assertEquals(1, $this->crawler->filter('html')->count(),
-                'document shall have a HTML node'
+    public function testInheritsFromLayout(){
+        $this->assertEquals(1, $this->crawler->filter('html')->count()
+                'index.html.twig shall inherit global layout'
                 );
-        $this->assertEquals(1, $this->crawler->filter('body')->count(),
-                'document shall have a BODY node'
-                );
-    }
-    
-    public function testDocumentHasBasicNodes(){
-        $this->assertEquals(1, $this->crawler->filter('title')->count(),
-                'document shall have a TITLE node'
-                );
-        /**
-        $this->assertEquals(1, $this->crawler->filter('meta[charset="utf-8"]')->count(),
-                'document shall have a meta[charset=utf-8] node'
-                );
-         * 
-         */
-        
-        $this->assertEquals();
-        
-        
     }
 }
