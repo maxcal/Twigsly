@@ -1,0 +1,3 @@
+[submodule "lib/Goutte"]
+	path = lib/Goutte
+	url = https://github.com/fabpot/Goutte.git
