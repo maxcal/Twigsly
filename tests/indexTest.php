@@ -35,7 +35,7 @@ class indexTest extends PHPUnit_Framework_TestCase {
     }
     
     public function testInheritsFromLayout(){
-        $this->assertEquals(1, $this->crawler->filter('html')->count()
+        $this->assertEquals(1, $this->crawler->filter('html')->count(),
                 'index.html.twig shall inherit global layout'
                 );
     }
