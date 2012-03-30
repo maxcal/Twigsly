@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <meta charset="utf-8" />
+        <title>{% block title %}{{ titlefn() }}{% endblock title %}</title>
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        {% endblock head %}
+    </head>
+    <body>
+        <header id="site-header">
+        {% block header %}{% endblock header %}
+        </header>
+        <div id="site-main">
+        {% block main %}
+           <div id="site-content">
+               {% block content %}
+               {% endblock content %}
+           </div>
+        {% endblock main %}    
+        </div>
+        <footer id="site-footer">
+        {% block footer %}{% endblock footer %}
+        </footer>
+    </body>
+</html>
