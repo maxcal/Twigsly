@@ -14,7 +14,9 @@
     bootstrap                   = "tests/bootstrap.php"
     >
     <php>
+        <!-- Set this to URI of your wordpress testing environment -->
         <env name="WORDPRESS_BASE_URI" value="http://localhost.com/wordpress"/>
+        <!-- File path to Twigpress plugin -->
         <env name="TWIGPRESS_PATH" value="path/to/twigpress"/>
     </php>
     <testsuites>
