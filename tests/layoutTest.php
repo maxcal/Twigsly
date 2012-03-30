@@ -58,7 +58,7 @@ class layoutTest extends PHPUnit_Framework_TestCase {
      */
     public function testTwigpressLoaded(){
         $this->assertTrue(
-                file_exists($_ENV['twigpress_path'] . '/twigpress.php')
+                file_exists($_ENV['TWIGPRESS_PATH'] . '/twigpress.php')
                 );
         $this->assertTrue(
         class_exists('Twig_Environment'));

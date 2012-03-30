@@ -1,4 +1,4 @@
 <?php
-if (file_exists($_ENV['twigpress_path'] . '/twigpress.php')){
-    require_once $_ENV['twigpress_path'] . '/twigpress.php';
+if (file_exists($_ENV['TWIGPRESS_PATH'] . '/twigpress.php')){
+    require_once $_ENV['TWIGPRESS_PATH'] . '/twigpress.php';
 }

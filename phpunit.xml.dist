@@ -15,6 +15,7 @@
     >
     <php>
         <env name="WORDPRESS_BASE_URI" value="http://localhost.com/wordpress"/>
+        <env name="TWIGPRESS_PATH" value="path/to/twigpress"/>
     </php>
     <testsuites>
         <testsuite name="Project Test Suite">
@@ -31,5 +32,4 @@
         </whitelist>
     </filter>
     -->
-
 </phpunit>
