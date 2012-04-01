@@ -1,1 +1,12 @@
 {% extends "layout.html.twig" %} 
+
+{% block content %}
+{% loop while have.posts %}
+<article class="entry">
+    <h1 class="entry-title">{{ the_title() }}</h1>
+    <div class="entry-body">
+        {{ the_content() }}
+    </div>
+</article>
+{% endloop %}
+{% endblock content %}
