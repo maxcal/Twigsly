@@ -26,7 +26,7 @@ class indexTest extends PHPUnit_Framework_TestCase {
 
 
     protected function path($relative_path = null){
-        if (isset($_ENV[$_ENV['wordpress_uri']])) {
+        if (isset($_ENV['wordpress_uri'])) {
             return $_ENV['wordpress_uri'];
         }
         else {
@@ -37,6 +37,25 @@ class indexTest extends PHPUnit_Framework_TestCase {
     public function testInheritsFromLayout(){
         $this->assertEquals(1, $this->crawler->filter('html')->count(),
                 'index.html.twig shall inherit global layout'
+                );
+    }
+    
+    public function testPostsAreDisplayed(){
+        
+        $posts = $this->crawler->filter('.entry');
+        
+        $this->assertTrue( $posts->count() > 0,
+            'assert that posts are displayed'
+        );
+        
+        $this->assertContains('Hello world!', $posts->filter('.entry-title')->extract('_text'),
+                'Assert that the entry title is displayed'
+                );
+        
+        
+        $body = $posts->filter('.entry-content')->extract('_text');
+        $this->assertContains('Welcome to WordPress. This is your first post.', $body[0]
+                'Assert that the entry content is displayed'
                 );
     }
 }
