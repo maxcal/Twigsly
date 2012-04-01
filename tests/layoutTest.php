@@ -108,4 +108,22 @@ class layoutTest extends PHPUnit_Framework_TestCase {
                 'document shall have a #site-footer node'
                 );
     }
+    
+    public function testBasicBlocksHaveBlockClass(){
+        
+        $baseblocks = array('#site-header','#site-main','#site-content','#site-footer');
+        
+        foreach ( $baseblocks as $block ) {
+           $this->assertEquals(1, $this->crawler->filter("$block.block")->count(),
+                   "Assert that $block shall have block class"
+                   ); 
+        }    
+    }
+    
+    public function testTitleIsPrinted(){
+        $title = $this->crawler
+                ->filter('title')->extract('_text');
+                
+        $this->assertEquals($title[0], 'TwigpressFriends_test');
+    }
 }
