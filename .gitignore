@@ -20,6 +20,14 @@ Desktop.ini
 
 # KDE
 .directory
+
+
+# netbeans
 /nbproject/private/
 /nbproject/
+
+# PHPunit
 /phpunit.xml
+
+# checking in config is bad.
+wp-config.php
