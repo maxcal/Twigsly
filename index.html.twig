@@ -1,12 +1,21 @@
 {% extends "layout.html.twig" %} 
-
-{% block content %}
+{% block content %} 
 {% loop while have.posts %}
-<article class="entry">
-    <h1 class="entry-title">{{ the_title() }}</h1>
-    <div class="entry-body">
-        {{ the_content() }}
-    </div>
-</article>
+    {% block post %}
+                <article {{ post_class() }} id="post-{{ the_ID() }}">
+                    <h1 class="entry-title">
+                        {% spaceless %}
+                        <a class="entry-permalink" href="{{ the_permalink() }}">{{ the_title() }}</a>
+                        {% endspaceless %}
+                    </h1>
+                    <div class="entry-content">
+                        {{ the_content() }}
+                    </div>
+                    <div class="post-meta">
+                        <div class="post-author">{{ the_author() }}</div>
+                        <div class="post-pubtime"><time>{{ the_time() }}</time></div>
+                    </div>
+                </article>
+    {% endblock post %}
 {% endloop %}
 {% endblock content %}
