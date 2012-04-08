@@ -2,21 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% block head %}
+        {% block head %} 
         <meta charset="utf-8" />
-        <title>{% spaceless %}
-        {% block title %}
-        {{ bloginfo('name') }}{{ wp_title() }}
-        {% endblock title %}
-        {% endspaceless %}</title>
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        {% endblock head %}
+        <title>{% block title %}{{ bloginfo('name') }}{{ wp_title() }}{% endblock title %}</title>
+        {% endblock head %} 
     </head>
     <body>
+        
         <header id="site-header" class="block">
-            <h1>{% block header %}{% endblock header %}</h1>
+            {% block header %} 
+            <h1>{% block header_heading %}{{ bloginfo('name') }}{% endblock header_heading %}</h1>
+            {% endblock header %} 
         </header>
             
         <div id="site-main" class="block">
@@ -30,5 +26,6 @@
         <footer id="site-footer" class="block">
         {% block footer %}{% endblock footer %} 
         </footer>
+        
     </body>
 </html>
